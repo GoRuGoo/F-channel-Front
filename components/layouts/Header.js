@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -27,5 +28,24 @@ export default function Header() {
         </Toolbar>
       </AppBar>
     </Box>
+=======
+export default function Header() {
+  return (
+    <nav className="item-center m-auto flex py-3.5 md:py-10 md:pb-0">
+      <div className="container mx-auto flex flex-wrap  items-center justify-between">
+        <a className="itaric px-5 text-4xl font-bold italic">KosenSNS</a>
+        <div className="">
+          <ul className="flex">
+            <li>
+              <a className="block py-2 px-5 ">test</a>
+            </li>
+            <li>
+              <a className="block py-2 px-5">test2</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+>>>>>>> master
   );
 }
