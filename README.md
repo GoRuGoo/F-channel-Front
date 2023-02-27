@@ -1,4 +1,4 @@
-# F-channel-Back
+# F-channel-Front
 
 
 ## Overview
@@ -21,13 +21,13 @@
 1. Clone this repository
 
 ```
-git clone git@github.com:GoRuGoo/KosenSNS-Front.git
+git clone git@github.com:GoRuGoo/F-channel-Front.git
 ```
 
 2. Change Directory
 
 ```
-cd KosenSNS-Front
+cd F-channel-Front
 ```
 
 
