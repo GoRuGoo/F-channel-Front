@@ -1,5 +1,4 @@
 import Header from "@/components/layouts/Header";
-import { IosShare } from "@mui/icons-material";
 
 export default function Article({ articleList }) {
   return (
