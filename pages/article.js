@@ -1,6 +1,8 @@
 import Header from "@/components/layouts/Header";
+import Link from "next/link";
 
 export default function Article({ articleList }) {
+  const reverseArticleList = articleList.reverse();
   return (
     <>
       <Header />
@@ -14,10 +16,15 @@ export default function Article({ articleList }) {
           </span>
         </h2>
         <ol className="ml-28 mt-20 list-decimal text-4xl italic text-chblue">
-          {articleList.map((article) => (
-            <li className="my-10">{article.title}</li>
+          {reverseArticleList.map((article) => (
+            <li className="my-10">
+              {article.title}【{article.modified.slice(0, -9)}】
+            </li>
           ))}
         </ol>
+        <h3 className="mr-10 mb-5 text-right text-2xl text-chblue ">
+          <Link href={"/article/post"}>新規スレッド作成はこちら</Link>
+        </h3>
       </div>
     </>
   );
