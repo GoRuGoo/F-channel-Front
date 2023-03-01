@@ -1,4 +1,5 @@
 import Header from "@/components/layouts/Header";
+import Link from "next/link";
 
 export default function Article({ articleList }) {
   return (
@@ -18,6 +19,9 @@ export default function Article({ articleList }) {
             <li className="my-10">{article.title}</li>
           ))}
         </ol>
+        <h3 className="mr-10 mb-5 text-right text-2xl text-chblue ">
+          <Link href={"/article/post"}>新規スレッド作成はこちら</Link>
+        </h3>
       </div>
     </>
   );
