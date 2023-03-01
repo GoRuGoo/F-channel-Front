@@ -48,8 +48,15 @@ export default function Post() {
             <input type={"text"} id="nickname" name="nickname" required />
             <label htmlFor="kosenname">高専名</label>
             <input type={"text"} id="kosenname" name="kosenname" required />
-            <label htmlFor="level">レベル</label>
-            <input type={"number"} id="level" name="level" required />
+            <label htmlFor="level">やばさレベル</label>
+            <input
+              type={"number"}
+              id="level"
+              name="level"
+              min={"0"}
+              max={"10"}
+              required
+            />
             <label htmlFor="content">内容</label>
             <input type={"text"} id="content" name="content" required />
             <button
