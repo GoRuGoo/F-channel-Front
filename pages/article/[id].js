@@ -42,12 +42,28 @@ export default function Test({ data }) {
           <dd className="my-2">{data.content}</dd>
         </ul>
         <div>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="nickname">ニックネーム</label>
+          <h2>
+            <span className="rounded-2xl bg-blue-400 py-2 px-3 text-xl font-bold text-white">
+              新規コメント
+            </span>
+          </h2>
+          <form onSubmit={handleSubmit} className="my-5 ml-3 flex flex-col">
+            <label htmlFor="nickname " className="font-bold">
+              ニックネーム
+            </label>
             <input type={"text"} id="nickname" name="nickname" required />
-            <label htmlFor="content">コメント</label>
+            <label htmlFor="content" className="font-bold">
+              コメント
+            </label>
             <input type={"text"} id="content" name="content" required />
-            <button type="submit">送信！</button>
+            <button type="submit" className="pt-6">
+              <span
+                className=" rounded-xl bg-blue-400 py-2 px-3 text-2xl font-bold
+            text-white"
+              >
+                送信
+              </span>
+            </button>
           </form>
         </div>
       </div>
