@@ -1,6 +1,29 @@
 import Header from "@/components/layouts/Header";
+import { useRouter } from "next/router";
 
 export default function Test({ data }) {
+  const router = useRouter();
+  const id = router.query.id;
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const submitData = {
+      thredid: parseInt(id),
+      nickname: event.target.nickname.value,
+      content: event.target.content.value,
+    };
+    const JSONdata = JSON.stringify(submitData);
+    const endpoint = "http://localhost:8080/article/thred";
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSONdata,
+    };
+    await fetch(endpoint, options, { mode: "cors" }).then(() => {
+      location = "http://localhost:3000/article/" + id.toString();
+      alert("コメント成功！こんなことしてる暇あるなら勉強しな！");
+    });
+  };
+
   return (
     <>
       <Header />
@@ -18,6 +41,15 @@ export default function Test({ data }) {
           </li>
           <dd className="my-2">{data.content}</dd>
         </ul>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="nickname">ニックネーム</label>
+            <input type={"text"} id="nickname" name="nickname" required />
+            <label htmlFor="content">コメント</label>
+            <input type={"text"} id="content" name="content" required />
+            <button type="submit">送信！</button>
+          </form>
+        </div>
       </div>
     </>
   );
