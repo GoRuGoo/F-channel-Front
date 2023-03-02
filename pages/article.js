@@ -40,9 +40,3 @@ export async function getServerSideProps() {
     },
   };
 }
-
-//title
-//nicknamae
-//kosen_name
-//level
-//content
