@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         chgreen: "#C5FFC5",
         chblue: "#0000FF",
+        chgray: "#EDEDED",
       },
     },
   },

@@ -30,7 +30,7 @@ export default function Article({ articleList }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch("http://localhost:8080/article");
   const articleList = await res.json();
 
@@ -40,9 +40,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-//title
-//nicknamae
-//kosen_name
-//level
-//content
