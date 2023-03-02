@@ -12,7 +12,7 @@ export default function Test({ data }) {
       content: event.target.content.value,
     };
     const JSONdata = JSON.stringify(submitData);
-    const endpoint = "http://localhost:8080/article/thred";
+    const endpoint = "http://localhost:8080/article/thred/post";
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
