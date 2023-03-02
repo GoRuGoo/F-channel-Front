@@ -19,7 +19,7 @@ export default function Post() {
     };
     await fetch(endpoint, optinos, { mode: "cors" }).then(() => {
       location = "http://localhost:3000/article/";
-      alert("スレッド立ち上げに成功しました！高専生活は失敗！");
+      alert("スレッド立ち上げに成功！単位も青春も失った、な！");
     });
   };
 
