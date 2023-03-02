@@ -1,7 +1,8 @@
 import Header from "@/components/layouts/Header";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Test({ data }) {
+export default function Test({ data, dataThred }) {
   const router = useRouter();
   const id = router.query.id;
   const handleSubmit = async (event) => {
@@ -34,12 +35,22 @@ export default function Test({ data }) {
         <ul className="my-10 ml-7  list-decimal text-2xl">
           <li className="font-bold">
             名前：
-            <span className="font-bold text-green-700">
-              {data.nickname}
-            </span>{" "}
-            {data.created}
+            <span className="font-bold text-green-700">{data.nickname}</span>
+            <span className="ml-6">{data.created.slice(0, -9)}</span>
           </li>
-          <dd className="my-2">{data.content}</dd>
+          <dd className="m-3">{data.content}</dd>
+          {dataThred.map((comment) => (
+            <>
+              <li className="font-bold">
+                名前：{" "}
+                <span className="font-bold text-green-700">
+                  {comment.nickname}
+                </span>
+                <span className="ml-6">{comment.created.slice(0, -9)}</span>
+              </li>
+              <dd className="m-3">{comment.content}</dd>
+            </>
+          ))}
         </ul>
         <div>
           <h2>
@@ -66,6 +77,11 @@ export default function Test({ data }) {
             </button>
           </form>
         </div>
+        <div>
+          <Link href={"http://localhost:3000/article"}>
+            <span>←一覧へ戻る</span>
+          </Link>
+        </div>
       </div>
     </>
   );
@@ -73,7 +89,10 @@ export default function Test({ data }) {
 
 export async function getServerSideProps({ query }) {
   const endpoint = `http://localhost:8080/article/${query.id}`;
+  const endpointThred = `http://localhost:8080/article/thred/${query.id}`;
   const res = await fetch(endpoint);
-  const data = await res.json();
-  return { props: { data } };
+  const resThred = await fetch(endpointThred);
+  const data = await res.json(resThred);
+  const dataThred = await resThred.json();
+  return { props: { data, dataThred } };
 }
