@@ -6,8 +6,8 @@ export default function Article({ articleList }) {
   return (
     <>
       <Header />
-      <div className="mx-auto my-10 w-11/12 rounded-2xl border-4  border-black ">
-        <h2 className="ml-10  rounded-3xl bg-chgreen pt-10">
+      <div className="mx-auto my-10 w-11/12 rounded-2xl border-4  border-black bg-chgray ">
+        <h2 className="ml-10  rounded-3xl pt-10">
           <span
             className="rounded-2xl bg-blue-400 py-2 px-3 text-3xl font-bold text-white
     "
