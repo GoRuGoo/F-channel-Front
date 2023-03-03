@@ -28,8 +28,9 @@ export default function Login() {
               <InlineMath math="\int \left( 5x^{4}-3x^{2}+\dfrac{3\sqrt{x}}{2}\right) dx" />
             </span>
           </h2>
-          <div className="inline">
-            <ul className="mx-auto flex  w-6/12 list-decimal">
+          <div className="mx-auto inline justify-center">
+            <h2 className="text-center">こたえ</h2>
+            <ul className=" flex list-decimal  justify-center">
               <li className="mx-5">
                 <Link href={"/article"}>
                   <span>
@@ -44,7 +45,7 @@ export default function Login() {
                   </span>
                 </Link>
               </li>
-              <li className="mx-5">
+              <li className="ml-5">
                 <Link href={"/bad"}>
                   <span>
                     <InlineMath math="\log \left| 3x-1\right| +C" />
