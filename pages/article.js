@@ -18,7 +18,9 @@ export default function Article({ articleList }) {
         <ol className="ml-28 mt-20 list-decimal text-4xl italic text-chblue">
           {reverseArticleList.map((article) => (
             <li className="my-10">
-              {article.title}【{article.modified.slice(0, -9)}】
+              <Link href={`/article/${article.postid}`}>
+                {article.title}【{article.modified.slice(0, -9)}】
+              </Link>
             </li>
           ))}
         </ol>
