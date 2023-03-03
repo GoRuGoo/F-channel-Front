@@ -29,23 +29,23 @@ export default function Login() {
             </span>
           </h2>
           <div className="mx-auto inline justify-center">
-            <h2 className="text-center">こたえ</h2>
-            <ul className=" flex list-decimal  justify-center">
-              <li className="mx-5">
+            <h2 className="text-center text-2xl">こたえ</h2>
+            <ul className=" mt-5 mr-4  flex justify-center">
+              <li className="mx-5 rounded-2xl bg-blue-400 py-2 px-3 text-xl font-bold text-white hover:bg-blue-600">
                 <Link href={"/article"}>
                   <span>
                     <InlineMath math="x^{5}-x^{3}+\sqrt{x^{3}}+C" />
                   </span>
                 </Link>
               </li>
-              <li className="mx-5">
+              <li className="mx-5 rounded-2xl bg-blue-400 py-2 px-3 text-xl font-bold text-white hover:bg-blue-600">
                 <Link href={"/bad"}>
                   <span>
                     <InlineMath math="\left(3x^{2}-5x+2\right)+C" />
                   </span>
                 </Link>
               </li>
-              <li className="ml-5">
+              <li className="mx-5 rounded-2xl bg-blue-400 py-2 px-3 text-xl font-bold text-white hover:bg-blue-600">
                 <Link href={"/bad"}>
                   <span>
                     <InlineMath math="\log \left| 3x-1\right| +C" />
